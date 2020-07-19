@@ -1,15 +1,16 @@
 import * as React from "react";
+import differenceInSeconds from "date-fns/differenceInSeconds";
 
 async function fetchItems(setItems) {
-  // Default options are marked with *
   const response = await fetch(`/api/get-items`);
   const jsonResponse = await response.json(); // parses JSON response into native JavaScript objects
   const items = jsonResponse.items;
   setItems(items);
 }
 
-const ListItems = (props) => {
+const ListItems = () => {
   const [items, setItems] = React.useState([]);
+  const now = new Date();
 
   React.useEffect(() => {
     fetchItems(setItems);
@@ -36,7 +37,11 @@ const ListItems = (props) => {
                 <div className="col-4 text-right">
                   expires in{" "}
                   <span className="badge badge-secondary">
-                    {item.expiresInSeconds} s
+                    {Math.max(
+                      differenceInSeconds(new Date(item.expiresIn), now),
+                      0
+                    )}{" "}
+                    s
                   </span>
                 </div>
               </div>
