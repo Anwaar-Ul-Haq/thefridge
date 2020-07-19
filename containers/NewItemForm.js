@@ -1,8 +1,7 @@
 import * as React from "react";
-import style from "./form.module.css";
 
 const NewItemForm = () => (
-  <form className={style.wrapper}>
+  <form>
     <div className="form-row">
       <div className="form-group col-md-8">
         <label htmlFor="formItemName">Item name</label>
