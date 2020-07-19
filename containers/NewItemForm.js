@@ -20,12 +20,12 @@ const NewItemForm = () => (
     </div>
     <div className="form-row">
       <div className="form-group col-sm-3">
-        <label htmlFor="formExpiresIn">Expires in</label>
+        <label htmlFor="formExpiresAfterSeconds">Expires after</label>
         <div className="input-group">
           <input
             type="text"
             className="form-control"
-            id="formExpiresIn"
+            id="formExpiresAfterSeconds"
             aria-label="Expires in"
             aria-describedby="basic-addon2"
           />
