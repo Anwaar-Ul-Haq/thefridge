@@ -16,5 +16,5 @@ export default (req, res) => {
   fillFridge(items);
 
   res.statusCode = 200;
-  res.json({ items: newItem });
+  res.json({ items: items });
 };
