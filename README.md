@@ -1,5 +1,10 @@
 ## The Fridge - React Task
 
+Start by forking this repository as a **private repository**. 
+When you're done, just push all the commits inside and send us a link to your Bitbucket repo. 
+
+### Installation
+
 First, install all dependencies:
 
 ```bash
