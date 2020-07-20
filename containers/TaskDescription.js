@@ -62,6 +62,12 @@ const TaskDescription = () => (
         there isn't 🤞).
       </li>
       <li>
+        Other than that, you can treat this as any other work project. Feel free
+        to modify existing and add new components. Structure your git commits
+        and create good enough UX that you wouldn't be ashamed to send to our
+        clients.
+      </li>
+      <li>
         This app uses{" "}
         <a href="http://nextjs.org/" target="_blank">
           Next.js
