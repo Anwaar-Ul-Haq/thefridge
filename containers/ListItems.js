@@ -3,7 +3,7 @@ import differenceInSeconds from "date-fns/differenceInSeconds";
 
 async function fetchItems(setItems) {
   const response = await fetch(`/api/get-items`);
-  const jsonResponse = await response.json(); // parses JSON response into native JavaScript objects
+  const jsonResponse = await response.json();
   const items = jsonResponse.items;
   setItems(items);
 }

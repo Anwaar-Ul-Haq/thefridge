@@ -23,7 +23,8 @@ const TaskDescription = () => (
             is already there show a warning to user.
           </li>
           <li>
-            You must make sure, that our users can only put integers inside{" "}
+            You must make sure, that our users can only put whole numbers
+            between 1 and 999 (included) inside the
             <code>Expires after</code> field.
           </li>
           <li>
