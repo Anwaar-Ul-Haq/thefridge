@@ -3,7 +3,7 @@
 1. Clone this repo
 2. Install and run the application
 3. You'll find the task description **inside the app**.
-3. When you're done with the task upload it as **your private repository** and give access to `vojtech.petrus@gmail.com`.
+3. When you're done with the task upload it as **your private repository on BitBucket** and give access to `vojtech.petrus@gmail.com`.
 Please **DO NOT SEND PR TO THIS REPO**. Thank you.  
 
 ### Installation
