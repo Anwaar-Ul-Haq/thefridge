@@ -17,18 +17,19 @@ const TaskDescription = () => (
         Make form for adding stuff into our fridge alive.
         <ul>
           <li>
-            Item name can't be anything that's already in the fridge. After
-            submitting you should get all the items from API (they might have
-            changed) by calling <code>GET /api/get-items</code> and if the name
-            is already there show a warning to user.
-          </li>
-          <li>
             You must make sure, that our users can only put whole numbers
             between 1 and 999 (included) inside the
             <code>Expires after</code> field.
           </li>
           <li>
-            Send POST to <code>/api/add-item</code>, having json body:{" "}
+            Item name can't be anything that's already in the fridge. When user
+            tries to add new item to fridge, get all items (they might have
+            changed) by calling <code>GET /api/get-items</code> and if the name
+            is already there show a warning to user.
+          </li>
+          <li>
+            <strong>After you've checked for item's duplicity</strong> send POST
+            to <code>/api/add-item</code>, having json body:{" "}
             <code>
               &#123; name: string, expiresAfterSeconds: integer &#125;
             </code>
