@@ -4,7 +4,7 @@
 2. Install and run the application
 3. You'll find the task description **inside the app**.
 3. When you're done with the task upload it as **your private repository on BitBucket** and give access to `vojtech.petrus@gmail.com`.
-Please **DO NOT SEND PR TO THIS REPO**. Thank you.  
+Please **DO NOT SEND PR OR FORK THIS REPO**. Thank you.  
 
 ### Installation
 
