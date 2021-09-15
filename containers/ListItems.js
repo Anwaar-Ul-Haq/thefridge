@@ -1,20 +1,18 @@
 import * as React from "react";
 import differenceInSeconds from "date-fns/differenceInSeconds";
 
-async function fetchItems(setItems) {
-  const response = await fetch(`/api/get-items`);
-  const jsonResponse = await response.json();
-  const items = jsonResponse.items;
-  setItems(items);
-}
-
-const ListItems = () => {
-  const [items, setItems] = React.useState([]);
+const ListItems = ({ items }) => {
   const now = new Date();
+  const [timeInSeconds, setTimeInSeconds] = React.useState(0);
 
   React.useEffect(() => {
-    fetchItems(setItems);
-  }, []);
+    const intervalId = setInterval(() => {
+      setTimeInSeconds(timeInSeconds + 1);
+    }, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [timeInSeconds]);
 
   return (
     <div
@@ -22,6 +20,19 @@ const ListItems = () => {
         maxWidth: "600px",
       }}
     >
+      {/* Start */}
+      <div className="row">
+        <div className="col-2">
+          <h5>Item I.D</h5>
+        </div>
+        <div className="col-6">
+          <h5>Item Name</h5>
+        </div>
+        <div className="col-4">
+          <h5>Expires In</h5>
+        </div>
+      </div>
+      {/* End */}
       <ul className="list-group">
         {items.map((item) => (
           <li className="list-group-item" key={item.id}>
@@ -35,13 +46,23 @@ const ListItems = () => {
                 </div>
                 <div className="col-6">{item.name}</div>
                 <div className="col-4 text-right">
-                  expires in{" "}
-                  <span className="badge badge-secondary">
-                    {Math.max(
-                      differenceInSeconds(new Date(item.expiresIn), now),
-                      0
-                    )}{" "}
-                    s
+                  {" "}
+                  <span
+                    className={`badge badge-secondary ${
+                      differenceInSeconds(new Date(item.expiresIn), now) < 6 &&
+                      differenceInSeconds(new Date(item.expiresIn), now) > 0
+                        ? "pulse"
+                        : null
+                    }`}
+                  >
+                    {differenceInSeconds(new Date(item.expiresIn), now) > 0 ? (
+                      `${Math.max(
+                        differenceInSeconds(new Date(item.expiresIn), now),
+                        0
+                      )}s`
+                    ) : (
+                      <span>EXPIRED</span>
+                    )}
                   </span>
                 </div>
               </div>
